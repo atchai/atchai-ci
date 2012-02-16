@@ -12,7 +12,7 @@ class deploy:
 
     def install(self, db_user, db_pass, db_host, db_name, site_name, admin_user, admin_pass):
         self.drush('si minimal --db-url=mysql://%s:%s@%s/%s --site-name="%s" --account-name="%s" --account-pass="%s"'
-            % (db_user, db_pass, db_host, db_name, site_name, admin_user, admin_pass,))
+            % (db_user, db_pass, db_host, db_name, site_name, admin_user, admin_pass,), False)
 
     def pull(self, path, repo):
         with settings(warn_only=True):
