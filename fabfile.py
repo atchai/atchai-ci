@@ -12,7 +12,7 @@ def pull(repo, path):
     with settings(warn_only=True):
         if run('test -d %s/.git' % path).failed:
             run('git clone %s %s' % (repo, path,))
-    run('cd %s; git pull', % path)
+    run('cd %s; git pull' % path)
 
 def install(path, db_user, db_pass, db_host, db_name, admin_user, admin_pass, site_name):
     run('drush --root="%s/public" si minimal --db-url=mysql://%s:%s@%s/%s --site-name="%s" --account-name="%s" --account-pass="%s" -y'
