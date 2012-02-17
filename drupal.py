@@ -3,7 +3,7 @@ from fabric.context_managers import settings
 from fabric.operations import run
 
 class deploy:
-    def __init__(self, path, repo, public_path='/public')
+    def __init__(self, path, repo, public_path='/public'):
         self.public = path + public_path
         self.pull(path, repo)
 

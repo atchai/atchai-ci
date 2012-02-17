@@ -16,13 +16,13 @@ def dev():
     prod()
     env['repo_path'] = '/var/www/drupal'
     env['url'] = 'http://localhost/'
-    env['hosts'] = ['localhost'
+    env['hosts'] = ['localhost']
 
 def deploy():
     deploy = drupal.deploy(env['repo_path'], env['repo_url'])
     deploy.install()
     deploy.drush('en example')
 
-def test():
+def run_tests():
     deploy = drupal.deploy(env['repo_path'], env['repo_url'])
     deploy.test(env['url'])
